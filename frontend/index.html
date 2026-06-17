@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AspirantFlow | SSC CGL Interactive Prep Portal</title>
+  <meta name="description" content="An interactive, affordable study portal for SSC CGL aspirants. Track syllabus, clear concepts, solve interactive quizzes, and fetch daily current affairs.">
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- MathJax for rendering LaTeX formulas beautifully -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="brand-name">AspirantFlow</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <button class="nav-link active" id="navDashboard" onclick="switchTab('dashboard')">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-link" id="navPlanner" onclick="switchTab('planner')">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Study Planner</span>
+        </button>
+        <button class="nav-link" id="navSyllabus" onclick="switchTab('syllabus')">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Syllabus & Practice</span>
+        </button>
+        <button class="nav-link" id="navCurrentAffairs" onclick="switchTab('current-affairs')">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>Current Affairs</span>
+        </button>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="theme-switch-container">
+          <span class="theme-label"><i class="fa-solid fa-moon"></i> Dark Mode</span>
+          <label class="switch" for="themeToggle">
+            <input type="checkbox" id="themeToggle" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Top Bar -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-toggle" id="mobileToggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 id="pageTitle" class="page-title">Welcome Back, Aspirant</h1>
+        </div>
+        <div class="header-right">
+          <div class="date-display" id="currentDate">Wednesday, June 17, 2026</div>
+          <div class="streak-badge" id="streakBadge" title="Daily streak of studying">
+            <i class="fa-solid fa-fire"></i>
+            <span id="streakCount">0</span> Day Streak
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic Content Wrapper -->
+      <div class="content-container">
+        
+        <!-- DASHBOARD VIEW -->
+        <section id="viewDashboard" class="tab-view active">
+          <!-- Welcome and Motivation Banner -->
+          <div class="glass-card welcome-banner">
+            <div class="banner-content">
+              <h2>Your daily dose of determination</h2>
+              <p class="quote-text" id="motivationalQuote">"Success is not final, failure is not fatal: it is the courage to continue that counts."</p>
+              <span class="quote-author" id="motivationalAuthor">- Winston Churchill</span>
+            </div>
+            <div class="banner-visual">
+              <i class="fa-solid fa-rocket animate-float"></i>
+            </div>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="stats-grid">
+            <div class="glass-card stat-card">
+              <div class="stat-icon icon-quant"><i class="fa-solid fa-calculator"></i></div>
+              <div class="stat-info">
+                <h3>Quant Progress</h3>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="quantProgress" style="width: 0%"></div>
+                </div>
+                <span class="stat-value" id="quantProgressText">0%</span>
+              </div>
+            </div>
+            <div class="glass-card stat-card">
+              <div class="stat-icon icon-reasoning"><i class="fa-solid fa-brain"></i></div>
+              <div class="stat-info">
+                <h3>Reasoning Progress</h3>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="reasoningProgress" style="width: 0%"></div>
+                </div>
+                <span class="stat-value" id="reasoningProgressText">0%</span>
+              </div>
+            </div>
+            <div class="glass-card stat-card">
+              <div class="stat-icon icon-english"><i class="fa-solid fa-book"></i></div>
+              <div class="stat-info">
+                <h3>English Progress</h3>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="englishProgress" style="width: 0%"></div>
+                </div>
+                <span class="stat-value" id="englishProgressText">0%</span>
+              </div>
+            </div>
+            <div class="glass-card stat-card">
+              <div class="stat-icon icon-general"><i class="fa-solid fa-globe"></i></div>
+              <div class="stat-info">
+                <h3>Gen Awareness</h3>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="generalProgress" style="width: 0%"></div>
+                </div>
+                <span class="stat-value" id="generalProgressText">0%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two Column Layout for Dashboard Tasks and News -->
+          <div class="dashboard-columns">
+            <!-- Left: Today's Tasks -->
+            <div class="glass-card column-left">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-list-check"></i> Today's Study Schedule</h3>
+                <span class="badge" id="dashboardPlannerType">No active plan</span>
+              </div>
+              <div class="planner-checklist" id="todayChecklist">
+                <div class="empty-state">
+                  <i class="fa-solid fa-calendar-plus"></i>
+                  <p>You don't have an active study plan yet. Set one up in the <strong>Study Planner</strong> tab to begin covering the syllabus systematically!</p>
+                  <button class="btn btn-primary" onclick="switchTab('planner')">Set Up Planner</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: News Snippet -->
+            <div class="glass-card column-right">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-bolt"></i> Daily Current Affairs</h3>
+                <button class="btn-text" onclick="switchTab('current-affairs')">View All <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+              <div class="news-snippet-list" id="dashboardNewsList">
+                <div class="loading-state">
+                  <i class="fa-solid fa-circle-notch fa-spin"></i>
+                  <p>Fetching latest current affairs...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STUDY PLANNER VIEW -->
+        <section id="viewPlanner" class="tab-view">
+          <div class="planner-header-card glass-card">
+            <div class="planner-config">
+              <h2>Customize Your Prep Timeline</h2>
+              <p>Divide the complete syllabus of SSC CGL into actionable daily and weekly targets. Select your plan duration and build your personalized curriculum.</p>
+              
+              <div class="planner-form">
+                <div class="form-group">
+                  <label for="plannerDuration">Preparation Target Duration</label>
+                  <select id="plannerDuration" class="form-control">
+                    <option value="90">90-Day Express Plan (High Intensity)</option>
+                    <option value="180" selected>180-Day Standard Plan (Recommended)</option>
+                    <option value="360">360-Day Foundation Plan (Comprehensive)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="plannerHours">Target Daily Study Time</label>
+                  <select id="plannerHours" class="form-control">
+                    <option value="4">4 Hours / Day</option>
+                    <option value="6" selected>6 Hours / Day</option>
+                    <option value="8">8 Hours / Day</option>
+                  </select>
+                </div>
+                <button id="btnGeneratePlan" class="btn btn-primary" onclick="generatePlanner()">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Study Plan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="planner-content" id="plannerTimelineSection">
+            <div class="glass-card mt-20">
+              <div class="card-header border-bottom">
+                <h3><i class="fa-solid fa-timeline"></i> Your Study Roadmap</h3>
+                <div class="planner-progress-info">
+                  <span id="plannerProgressPercent">Plan Progress: 0%</span>
+                  <div class="progress-bar-container w-150">
+                    <div class="progress-bar" id="plannerOverallProgress" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-weeks" id="timelineWeeks">
+                <!-- Will be populated dynamically -->
+                <div class="empty-state py-40">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  <p>Click "Generate Study Plan" above to create your syllabus roadmap based on your chosen preparation duration.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SYLLABUS & PRACTICE VIEW -->
+        <section id="viewSyllabus" class="tab-view">
+          <!-- Subject Navigation Pills -->
+          <div class="subject-pills">
+            <button class="pill active" onclick="filterSubject('quant', this)" id="pillQuant">
+              <i class="fa-solid fa-calculator"></i> Quantitative Aptitude
+            </button>
+            <button class="pill" onclick="filterSubject('reasoning', this)" id="pillReasoning">
+              <i class="fa-solid fa-brain"></i> Reasoning
+            </button>
+            <button class="pill" onclick="filterSubject('english', this)" id="pillEnglish">
+              <i class="fa-solid fa-book"></i> English Language
+            </button>
+            <button class="pill" onclick="filterSubject('general', this)" id="pillGeneral">
+              <i class="fa-solid fa-globe"></i> General Awareness
+            </button>
+          </div>
+
+          <!-- Topics Grid -->
+          <div class="topics-grid" id="topicsGrid">
+            <!-- Populated Dynamically -->
+          </div>
+
+          <!-- Concept & Practice Workspace (Hidden by Default) -->
+          <div class="workspace-card glass-card hidden" id="studyWorkspace">
+            <div class="workspace-header">
+              <button class="btn-back" onclick="closeWorkspace()">
+                <i class="fa-solid fa-arrow-left"></i> Back to Topics
+              </button>
+              <h2 id="workspaceTitle">Percentage Concept</h2>
+              <div class="workspace-tabs">
+                <button class="w-tab active" id="tabConcept" onclick="switchWorkspaceTab('concept')">
+                  <i class="fa-solid fa-lightbulb"></i> Concepts & Tricks
+                </button>
+                <button class="w-tab" id="tabQuiz" onclick="switchWorkspaceTab('quiz')">
+                  <i class="fa-solid fa-pencil"></i> Practice Quiz
+                </button>
+              </div>
+            </div>
+
+            <!-- Workspace Content -->
+            <div class="workspace-body">
+              <!-- Concepts Panel -->
+              <div class="workspace-panel active" id="panelConcept">
+                <div class="concept-section">
+                  <h3>Core Concept</h3>
+                  <p id="conceptText">Concepts will load here...</p>
+                </div>
+                <div class="tricks-section">
+                  <h3>Shortcut Tricks & Formulas</h3>
+                  <div class="tricks-list" id="tricksList">
+                    <!-- Tricks populated dynamically -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quiz Panel -->
+              <div class="workspace-panel" id="panelQuiz">
+                <div class="quiz-container">
+                  <div class="quiz-header">
+                    <div class="quiz-timer" id="quizTimerContainer">
+                      <i class="fa-regular fa-clock"></i> <span id="quizTimerText">00:00</span>
+                    </div>
+                    <div class="quiz-progress" id="quizProgressText">Question 1 of 5</div>
+                  </div>
+                  
+                  <div class="question-card" id="questionCard">
+                    <!-- Question text and options rendered here -->
+                  </div>
+
+                  <div class="quiz-navigation">
+                    <button id="btnPrevQuestion" class="btn btn-secondary" onclick="prevQuestion()" disabled>Previous</button>
+                    <button id="btnNextQuestion" class="btn btn-secondary" onclick="nextQuestion()">Next</button>
+                    <button id="btnSubmitQuiz" class="btn btn-success hidden" onclick="submitQuiz()">Submit Answers</button>
+                  </div>
+
+                  <!-- Quiz Results Panel (Hidden initially) -->
+                  <div class="quiz-results hidden" id="quizResults">
+                    <div class="score-display">
+                      <div class="score-ring">
+                        <span id="quizScoreVal">0/5</span>
+                      </div>
+                      <h4>Practice Completed!</h4>
+                      <p id="quizScoreFeedback">Good effort! Review the detailed explanations below to improve your concepts.</p>
+                      <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
+                    </div>
+                    <div class="explanations-list" id="explanationsList">
+                      <!-- Explanations will render here -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CURRENT AFFAIRS VIEW -->
+        <section id="viewCurrentAffairs" class="tab-view">
+          <div class="current-affairs-header-card glass-card">
+            <div class="header-card-content">
+              <h2>Daily Current Affairs & Exam Updates</h2>
+              <p>Stay updated with General Awareness topics required for SSC CGL. We fetch latest releases dynamically from the cloud.</p>
+              
+              <div class="affairs-toolbar">
+                <div class="search-box">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="searchNews" placeholder="Search current affairs..." onkeyup="filterNews()">
+                </div>
+                <button class="btn btn-secondary" id="btnSyncNews" onclick="fetchNews(true)">
+                  <i class="fa-solid fa-arrows-rotate"></i> Sync Latest News
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-grid-container">
+            <div class="news-grid" id="newsGrid">
+              <!-- Dynamic news cards populated here -->
+              <div class="loading-state py-40">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+                <p>Loading news updates...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+    
+  </div>
+
+  <script src="syllabus.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

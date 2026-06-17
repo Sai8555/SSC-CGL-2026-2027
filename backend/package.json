@@ -1,0 +1,14 @@
+{
+  "name": "ssc-cgl-portal-backend",
+  "version": "1.0.0",
+  "description": "Backend current affairs RSS feed parser for SSC CGL Study Portal",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "rss-parser": "^3.13.0"
+  }
+}
