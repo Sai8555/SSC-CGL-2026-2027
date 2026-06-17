@@ -96,6 +96,98 @@ const syllabusData = {
             explanation: "Using the formula: MP/CP = (100 + Profit%) / (100 - Discount%) \nMP/CP = (100 + 20) / (100 - 10) = 120 / 90 = 4 / 3. \nLet CP = 3 units, MP = 4 units. \nMarked Price is higher than CP by = 4 - 3 = 1 unit. \nPercentage higher = (1 / CP) * 100 = (1 / 3) * 100 = 33.33%."
           }
         ]
+      },
+      {
+        id: "ratio-proportion",
+        title: "Ratio and Proportion",
+        concept: "A ratio is a comparison of two quantities by division. A proportion is an equation that states that two ratios are equal (e.g. a:b = c:d). This is essential for solving partnership, mixtures, ages, and sharing problems.",
+        tricks: [
+          "**Combining Ratios:**\nIf $A:B = x:y$ and $B:C = p:q$, then to find $A:B:C$:\nMultiply $A:B$ by $p$ and $B:C$ by $y$.\n$$A:B:C = (x \\cdot p) : (y \\cdot p) : (y \\cdot q)$$",
+          "**Mean, Third, and Fourth Proportional:**\n- Mean proportional between a and b = $\\sqrt{ab}$\n- Third proportional of a and b = $b^2 / a$\n- Fourth proportional of a, b, and c = $(b \\cdot c) / a$"
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "If A:B = 2:3 and B:C = 4:5, find the ratio A:B:C.",
+            options: ["8:12:15", "2:4:5", "8:10:15", "6:12:15"],
+            answer: 0,
+            explanation: "A:B = 2:3, B:C = 4:5. \nThe common term is B (3 in the first, 4 in the second). \nTo make them equal, multiply A:B by 4 and B:C by 3: \nA:B = (2*4):(3*4) = 8:12 \nB:C = (4*3):(5*3) = 12:15 \nTherefore, A:B:C = 8:12:15."
+          },
+          {
+            id: "q2",
+            text: "Find the mean proportional between 9 and 16.",
+            options: ["12", "12.5", "14", "10"],
+            answer: 0,
+            explanation: "Mean Proportional = √(a * b) \nMean Proportional = √(9 * 16) = √144 = 12."
+          },
+          {
+            id: "q3",
+            text: "A sum of ₹3600 is divided among A, B, and C in the ratio 1:3:5. Find the share of B.",
+            options: ["₹400", "₹1200", "₹2000", "₹800"],
+            answer: 1,
+            explanation: "Total sum = ₹3600. Ratio = 1:3:5. \nSum of ratio parts = 1 + 3 + 5 = 9 parts. \nValue of 1 part = 3600 / 9 = ₹400. \nB's share (3 parts) = 3 * 400 = ₹1200."
+          },
+          {
+            id: "q4",
+            text: "The ratio of the ages of two persons is 4:7 and the difference between their ages is 30 years. Find the sum of their ages.",
+            options: ["110 years", "90 years", "70 years", "80 years"],
+            answer: 0,
+            explanation: "Let the ages be 4x and 7x. \nDifference = 7x - 4x = 3x. \nGiven, 3x = 30 => x = 10. \nSum of their ages = 4x + 7x = 11x = 11 * 10 = 110 years."
+          },
+          {
+            id: "q5",
+            text: "Two numbers are in the ratio 3:5. If 9 is subtracted from each, the new numbers are in the ratio 12:23. What is the smaller number?",
+            options: ["27", "33", "49", "36"],
+            answer: 1,
+            explanation: "Let the numbers be 3x and 5x. \nAccording to the question: \n(3x - 9) / (5x - 9) = 12 / 23 \nCross-multiplying: \n23 * (3x - 9) = 12 * (5x - 9) \n69x - 207 = 60x - 108 \n9x = 99 => x = 11. \nSmaller number = 3x = 3 * 11 = 33."
+          }
+        ]
+      },
+      {
+        id: "time-work",
+        title: "Time and Work",
+        concept: "Time and work deals with the efficiency of individuals or groups in completing a task. The work done is directly proportional to the time taken and efficiency. If a person can do a piece of work in D days, then in 1 day he does 1/D of the work.",
+        tricks: [
+          "**One Day Work Method:**\nIf A takes 'a' days to do a job, A's 1-day work = $1/a$.\nIf B takes 'b' days, B's 1-day work = $1/b$.\nCombined 1-day work of A & B = $\\frac{1}{a} + \\frac{1}{b} = \\frac{a+b}{ab}$.\nTime taken together = $\\frac{ab}{a+b}$ days.",
+          "**MDH Formula:**\nFor group work comparison, where M = Men, D = Days, H = Hours, W = Work, E = Efficiency:\n$$\\frac{M_1 D_1 H_1 E_1}{W_1} = \\frac{M_2 D_2 H_2 E_2}{W_2}$$"
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "A can complete a piece of work in 10 days, and B can complete the same work in 15 days. How long will they take to finish the work together?",
+            options: ["5 days", "6 days", "8 days", "7.5 days"],
+            answer: 1,
+            explanation: "Combined time = (a * b) / (a + b) \nCombined time = (10 * 15) / (10 + 15) = 150 / 25 = 6 days. \n\n**Alternate Method (LCM):** \nLCM of 10 and 15 = 30 (Total Work units). \nA's efficiency = 30/10 = 3 units/day. \nB's efficiency = 30/15 = 2 units/day. \nTotal efficiency together = 3 + 2 = 5 units/day. \nDays taken = 30 / 5 = 6 days."
+          },
+          {
+            id: "q2",
+            text: "A and B together can do a work in 12 days, while B alone can do it in 30 days. In how many days can A alone complete the work?",
+            options: ["18 days", "20 days", "24 days", "22 days"],
+            answer: 1,
+            explanation: "Let A's time be 'x' days. \nTogether 1-day work: 1/x + 1/30 = 1/12 \n1/x = 1/12 - 1/30 \nLCM of 12 and 30 = 60. \n1/x = (5 - 2) / 60 = 3 / 60 = 1 / 20. \nSo, A alone takes 20 days."
+          },
+          {
+            id: "q3",
+            text: "A is twice as efficient as B and takes 10 days less than B to finish a job. Find the time taken by B to complete the work.",
+            options: ["10 days", "15 days", "20 days", "25 days"],
+            answer: 2,
+            explanation: "Let B's efficiency be 1 unit/day and B's time be 't' days. \nA's efficiency = 2 units/day and A's time = 't - 10' days. \nSince Work = Efficiency * Time: \n1 * t = 2 * (t - 10) \nt = 2t - 20 => t = 20 days. \nTherefore, B takes 20 days."
+          },
+          {
+            id: "q4",
+            text: "12 men can complete a work in 8 days. How many days will 16 men take to complete the same work?",
+            options: ["6 days", "5 days", "4 days", "7 days"],
+            answer: 0,
+            explanation: "Using the MDH formula (M1 * D1 = M2 * D2): \n12 * 8 = 16 * D2 \n96 = 16 * D2 \nD2 = 96 / 16 = 6 days."
+          },
+          {
+            id: "q5",
+            text: "A, B, and C can complete a work in 12, 15, and 20 days respectively. They started working together, but A left 2 days before completion. Find the total number of days taken to finish the work.",
+            options: ["5.8 days", "5.2 days", "6 days", "5.4 days"],
+            answer: 0,
+            explanation: "LCM of 12, 15, and 20 = 60 units (Total Work). \nEfficiency: A = 60/12 = 5, B = 60/15 = 4, C = 60/20 = 3. \nLet the total time taken be 'x' days. \nA worked for (x - 2) days, B worked for x days, C worked for x days. \nTotal work = 5*(x - 2) + 4*x + 3*x = 60 \n5x - 10 + 7x = 60 \n12x = 70 => x = 70/12 = 5.83 days."
+          }
+        ]
       }
     ]
   },
@@ -123,8 +215,8 @@ const syllabusData = {
             id: "q2",
             text: "If 'COVET' is coded as 'FRYHW', how is 'SHDUO' coded?",
             options: ["VKGRR", "VIGRQ", "VKGXR", "VKGRQ"],
-            answer: 3,
-            explanation: "Pattern in COVET -> FRYHW: \nC + 3 = F \nO + 3 = R \nV + 3 = Y \nE + 3 = H \nT + 3 = W \nThe pattern is shifting each letter +3 positions. \nApplying to SHDUO: \nS + 3 = V \nH + 3 = K \nD + 3 = G \nU + 3 = X \nO + 3 = R \nWait, let's re-verify the options. Oh! The options have VKGRQ etc. Let's re-calculate. \nWait, if the question is 'how is SHDUO coded?' and the pattern is +3: \nS(19)+3 = V(22) \nH(8)+3 = K(11) \nD(4)+3 = G(7) \nU(21)+3 = X(24) \nO(15)+3 = R(18) \nSo it should be VKGXR. Option 2 is VIGRQ, 3 is VKGXR. Let's check: 'VKGXR' is option 2 (index 2). \nWait, let's write it down: VKGXR is the correct code. Let's make index 2 the answer."
+            answer: 2,
+            explanation: "Pattern in COVET -> FRYHW: \nC + 3 = F \nO + 3 = R \nV + 3 = Y \nE + 3 = H \nT + 3 = W \nThe pattern is shifting each letter +3 positions. \nApplying to SHDUO: \nS(19)+3 = V(22) \nH(8)+3 = K(11) \nD(4)+3 = G(7) \nU(21)+3 = X(24) \nO(15)+3 = R(18) \nSo it is VKGXR."
           },
           {
             id: "q3",
@@ -146,6 +238,98 @@ const syllabusData = {
             options: ["1677199", "16717209", "1677209", "16772020"],
             answer: 2,
             explanation: "Let's analyze RED -> 6720: \nR = 18, E = 5, D = 4. \nIf we reverse the order of letters: D, E, R (4, 5, 18). \nAdd 2 to each rank: \n4 + 2 = 6 \n5 + 2 = 7 \n18 + 2 = 20 \nStringing them together: 6720. \nLet's apply this to GREEN: \nLetters of GREEN: G(7), R(18), E(5), E(5), N(14). \nReverse the letters: N(14), E(5), E(5), R(18), G(7). \nAdd 2 to each rank: \n14 + 2 = 16 \n5 + 2 = 7 \n5 + 2 = 7 \n18 + 2 = 20 \n7 + 2 = 9 \nStringing them together: 1677209. \nTherefore, GREEN is coded as 1677209."
+          }
+        ]
+      },
+      {
+        id: "blood-relations",
+        title: "Blood Relations",
+        concept: "Blood Relations covers questions where you are required to establish a relation between two members based on a chain of given relationships. Commonly tested styles are Pointing to a photograph, Family tree, and Coded relations.",
+        tricks: [
+          "**Family Tree Symbols:**\n- Square/Plus (+) = Male member\n- Circle/Minus (-) = Female member\n- Horizontal double line (=) = Married couple\n- Vertical line (|) = Generation gap\n- Horizontal single line (-) = Siblings",
+          "**Approach:** Start from the last person in the chain (usually starting with 'my') and work backwards to establish the direct link."
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "Pointing to a photograph of a boy, Suresh said, 'He is the son of the only son of my mother.' How is Suresh related to that boy?",
+            options: ["Brother", "Uncle", "Cousin", "Father"],
+            answer: 3,
+            explanation: "Suresh says: 'my mother' -> Suresh's mother. \n'Only son of my mother' -> Suresh himself (since he is the only son). \n'Son of the only son...' -> Suresh's son. \nTherefore, Suresh is the father of the boy in the photograph."
+          },
+          {
+            id: "q2",
+            text: "If A + B means A is the brother of B; A - B means A is the sister of B; and A * B means A is the father of B. Which of the following means that C is the son of M?",
+            options: ["M * N - C", "M * C - G", "M * C + N", "C + N * M"],
+            answer: 2,
+            explanation: "Let's check option 3 (M * C + N): \n- M * C means M is the father of C (+ or - gender not known yet). \n- C + N means C is the brother of N (meaning C is Male). \n- Combining both: M is the father of C, who is a male sibling. \nTherefore, C is the son of M."
+          },
+          {
+            id: "q3",
+            text: "Introducing a woman, Shashank said, 'She is the mother of the only daughter of my son.' How is the woman related to Shashank?",
+            options: ["Daughter", "Daughter-in-law", "Sister", "Wife"],
+            answer: 1,
+            explanation: "Shashank's son -> Son. \n'Only daughter of my son' -> Shashank's granddaughter. \n'Mother of the only daughter of my son' -> Wife of Shashank's son. \nTherefore, the woman is Shashank's daughter-in-law."
+          },
+          {
+            id: "q4",
+            text: "Deepak has a brother Anil. Deepak is the son of Prem. Bimal is Prem's father. In terms of relationship, what is Anil to Bimal?",
+            options: ["Grandson", "Son", "Grandfather", "Brother"],
+            answer: 0,
+            explanation: "Anil and Deepak are brothers. \nThey are sons of Prem. \nBimal is Prem's father (Grandfather of Deepak & Anil). \nTherefore, Anil is the grandson of Bimal."
+          },
+          {
+            id: "q5",
+            text: "A's mother is sister of B and daughter of C. D is the daughter of B and sister of E. How is C related to E?",
+            options: ["Grandmother/Grandfather", "Aunt", "Father", "Mother"],
+            answer: 0,
+            explanation: "A's mother is the daughter of C. \nB is the sibling of A's mother, and also a child of C. \nD and E are children of B. \nSince C is the parent of B, C is the grandparent of B's children (D and E). \nTherefore, C is the Grandmother or Grandfather of E."
+          }
+        ]
+      },
+      {
+        id: "syllogism",
+        title: "Syllogism",
+        concept: "Syllogism is a form of logical reasoning where a conclusion is drawn from two or three statements. We assume the statements to be 100% true, even if they deviate from real-world facts, and determine which conclusions logically follow.",
+        tricks: [
+          "**Venn Diagram Approach:**\nDraw circles representing the categories in the statements. Draw the most minimal overlapping diagram first (Basic diagram), then think of alternative overlaps (Possibility diagrams).",
+          "**Rule of Complementary Pairs:**\nIf one conclusion is 'Some A are B' (Particular positive) and the other is 'No A is B' (Universal negative) and both are individually false, then the answer is **Either I or II follows**."
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "Statements: I. All cups are plates. II. All plates are spoons.\nConclusions: I. All cups are spoons. II. Some spoons are plates.",
+            options: ["Only conclusion I follows", "Only conclusion II follows", "Both I and II follow", "Neither I nor II follows"],
+            answer: 2,
+            explanation: "Statements: All cups (C) are plates (P). All plates (P) are spoons (S). \n- Since all C are P, and all P are S, the circle C lies entirely inside S. So, 'All cups are spoons' is TRUE. \n- Since all plates lie inside spoons, there is an overlap. So, 'Some spoons are plates' is also TRUE. \nTherefore, both I and II follow."
+          },
+          {
+            id: "q2",
+            text: "Statements: I. Some trees are papers. II. No paper is a pen.\nConclusions: I. Some trees are pens. II. No tree is a pen.",
+            options: ["Only I follows", "Only II follows", "Either I or II follows", "Neither I nor II follows"],
+            answer: 2,
+            explanation: "Statements: Some trees (T) overlap with papers (PA). No paper (PA) overlaps with pens (PE). \n- Can T overlap with PE? Yes, in some diagrams, but not all. So 'Some trees are pens' is not definitely true. \n- Is 'No tree is a pen' always true? No, there is a possible overlap. \n- Since these are complementary statements ('Some' and 'No' with same subjects) and one must be true, the answer is Either I or II follows."
+          },
+          {
+            id: "q3",
+            text: "Statements: I. All dogs are cats. II. Some cats are tigers.\nConclusions: I. All dogs are tigers. II. Some tigers are dogs.",
+            options: ["Only I follows", "Only II follows", "Both follow", "Neither follows"],
+            answer: 3,
+            explanation: "Statements: All dogs (D) are cats (C). Some cats (C) are tigers (T). \n- T only overlaps with C. It does not necessarily touch D. \n- Therefore, 'All dogs are tigers' is false. \n- 'Some tigers are dogs' is also false as there is no guaranteed overlap. \nNeither follows."
+          },
+          {
+            id: "q4",
+            text: "Statements: I. No hero is a coward. II. Some cowards are villagers.\nConclusions: I. Some villagers are not heroes. II. Some villagers are cowards.",
+            options: ["Only I follows", "Only II follows", "Both follow", "Neither follows"],
+            answer: 2,
+            explanation: "Statements: No hero (H) overlaps with coward (C). Some cowards (C) overlap with villagers (V). \n- Villagers who are cowards can never be heroes (since H and C never touch). So 'Some villagers are not heroes' is definitely TRUE. \n- From II, 'Some villagers are cowards' is directly TRUE. \nBoth follow."
+          },
+          {
+            id: "q5",
+            text: "Statements: All cars are bikes. II. All bikes are trucks. III. All trucks are planes.\nConclusions: I. All cars are planes. II. Some planes are bikes.",
+            options: ["Only I follows", "Only II follows", "Both follow", "Neither follows"],
+            answer: 2,
+            explanation: "All cars are inside bikes, bikes inside trucks, trucks inside planes. \n- Cars lie entirely inside planes. So, 'All cars are planes' is TRUE. \n- Bikes lie inside planes. So, 'Some planes are bikes' is TRUE. \nBoth follow."
           }
         ]
       }
@@ -200,6 +384,148 @@ const syllabusData = {
             explanation: "The error is in Part B. \nNegative adverbs like 'Scarcely', 'Hardly', and 'Barely' are followed by the correlative conjunction 'when', not 'than' (which is used with 'No sooner'). \nTherefore, 'than it started' should be replaced with 'when it started'."
           }
         ]
+      },
+      {
+        id: "active-passive",
+        title: "Active and Passive Voice",
+        concept: "Voice indicates whether the subject of the sentence performs the action (Active) or receives the action (Passive). During CGL exams, we convert active to passive sentences without changing their tense or core meaning.",
+        tricks: [
+          "**Basic Rule:** Object of active sentence becomes subject of passive sentence, and auxiliary verb is added according to tense. Subject is added using 'by'.\n- Simple Present: write -> is/am/are written\n- Present Continuous: is writing -> is/am/are being written\n- Past Simple: wrote -> was/were written\n- Present Perfect: has written -> has/have been written",
+          "**Imperative Sentences:**\nActive: 'Shut the door' -> Passive: 'Let the door be shut' or 'You are ordered to shut the door'."
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "Change to Passive: 'The chef prepared a delicious meal.'",
+            options: [
+              "A delicious meal was prepared by the chef.",
+              "A delicious meal is prepared by the chef.",
+              "A delicious meal had been prepared by the chef.",
+              "A delicious meal was being prepared by the chef."
+            ],
+            answer: 0,
+            explanation: "Active: Subject = The chef, Verb = prepared (Simple Past), Object = a delicious meal. \nPassive formula: Object + was/were + past participle + by + Subject. \nResult: 'A delicious meal was prepared by the chef.'"
+          },
+          {
+            id: "q2",
+            text: "Change to Passive: 'The children are flying kites.'",
+            options: [
+              "Kites were being flown by the children.",
+              "Kites are flown by the children.",
+              "Kites are being flown by the children.",
+              "Kites have been flown by the children."
+            ],
+            answer: 2,
+            explanation: "Active: are flying (Present Continuous). \nPassive formula: is/am/are + being + past participle (flown). \nResult: 'Kites are being flown by the children.'"
+          },
+          {
+            id: "q3",
+            text: "Change to Passive: 'Who wrote this beautiful poem?'",
+            options: [
+              "By whom was this beautiful poem written?",
+              "By whom this beautiful poem was written?",
+              "Who was written this beautiful poem?",
+              "By whom has this beautiful poem been written?"
+            ],
+            answer: 0,
+            explanation: "For 'Who' questions, passive starts with 'By whom'. \nSince 'wrote' is Simple Past, we use 'was/were + subject + past participle'. \nResult: 'By whom was this beautiful poem written?'"
+          },
+          {
+            id: "q4",
+            text: "Change to Passive: 'Post this letter.'",
+            options: [
+              "This letter should be post.",
+              "Let this letter be posted.",
+              "Let this letter posted.",
+              "You are ordered to post this letter."
+            ],
+            answer: 1,
+            explanation: "This is an imperative sentence. The standard conversion is: 'Let + Object + be + past participle'. \nResult: 'Let this letter be posted.'"
+          },
+          {
+            id: "q5",
+            text: "Change to Active: 'The matches have been won by our team.'",
+            options: [
+              "Our team has won the matches.",
+              "Our team won the matches.",
+              "Our team had won the matches.",
+              "Our team is winning the matches."
+            ],
+            answer: 0,
+            explanation: "Passive: 'have been won' (Present Perfect passive). \nActive Subject = Our team (singular, so we use 'has'), Active Verb = has won, Object = the matches. \nResult: 'Our team has won the matches.'"
+          }
+        ]
+      },
+      {
+        id: "idioms-phrases",
+        title: "Idioms & Phrases",
+        concept: "Idioms & Phrases are figurative expressions whose meanings cannot be understood literally from the individual words. SSC CGL tests idioms frequently in matching, sentence completion, and error spotting.",
+        tricks: [
+          "**Visual Memory:** Try to associate the origin or story behind the idiom (e.g. 'Bite the bullet' comes from historical battlefield surgeries).",
+          "**Context Clues:** Read sentences containing the idiom to infer positive, negative, or neutral tones."
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "What is the meaning of the idiom: 'Bite the bullet'?",
+            options: [
+              "To make a quick decision.",
+              "To face a difficult situation with courage.",
+              "To react aggressively to failure.",
+              "To indulge in an expensive hobby."
+            ],
+            answer: 1,
+            explanation: "'Bite the bullet' means to face a painful or extremely difficult situation with fortitude and courage. Historically, wounded soldiers bit on lead bullets to cope with pain during surgeries."
+          },
+          {
+            id: "q2",
+            text: "What is the meaning of the idiom: 'At the eleventh hour'?",
+            options: [
+              "At midnight.",
+              "Too early in the morning.",
+              "At the very last moment.",
+              "Exactly on time."
+            ],
+            answer: 2,
+            explanation: "'At the eleventh hour' means at the very last moment or just before it's too late."
+          },
+          {
+            id: "q3",
+            text: "What is the meaning of: 'To spill the beans'?",
+            options: [
+              "To waste food.",
+              "To perform a clumsy act.",
+              "To reveal a secret prematurely.",
+              "To make an honest confession."
+            ],
+            answer: 2,
+            explanation: "'To spill the beans' means to reveal secret information accidentally or prematurely."
+          },
+          {
+            id: "q4",
+            text: "Identify the correct meaning of: 'Burning the candle at both ends'?",
+            options: [
+              "Wasting money carelessly.",
+              "Working extremely hard day and night.",
+              "Creating conflict between two parties.",
+              "Living a very luxurious life."
+            ],
+            answer: 1,
+            explanation: "'Burning the candle at both ends' means exhausting oneself by working too hard, waking up early, and sleeping late."
+          },
+          {
+            id: "q5",
+            text: "What is the meaning of: 'A blessing in disguise'?",
+            options: [
+              "An event that seems bad at first but results in something good.",
+              "A hidden warning about future danger.",
+              "Receiving praise from an unexpected enemy.",
+              "A reward given for minor achievements."
+            ],
+            answer: 0,
+            explanation: "'A blessing in disguise' is something that appears unfortunate at first but later turns out to be highly beneficial."
+          }
+        ]
       }
     ]
   },
@@ -250,6 +576,103 @@ const syllabusData = {
             options: ["42nd Amendment", "44th Amendment", "52nd Amendment", "73rd Amendment"],
             answer: 0,
             explanation: "The 42nd Amendment Act of 1976 (enacted during Emergency) is called the 'Mini Constitution' due to the massive number of changes it brought to the Constitution, including adding the words 'Secular', 'Socialist', and 'Integrity' to the Preamble, and establishing Fundamental Duties."
+          }
+        ]
+      },
+      {
+        id: "indian-history",
+        title: "Indian History",
+        concept: "Indian History is divided into Ancient, Medieval, and Modern periods. CGL heavily tests Harappan Civilization, Maurya/Gupta empires, Delhi Sultanate, Mughal empire, and the Indian Freedom Struggle (1857-1947).",
+        tricks: [
+          "**Delhi Sultanate Dynasties Chronology (Mnemonic):**\n**S**ab **K**hao **T**amatar **L**al **S**e -> **S**lave, **K**hilji, **T**ughlaq, **S**ayyid, **L**odi.",
+          "**Mughal Emperors Chronology (Mnemonic):**\n**BHAJSA** -> **B**abur, **H**umayun, **A**kbar, **J**ahangir, **S**hah Jahan, **A**urangzeb."
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "Who was the founder of the Maurya Empire in India?",
+            options: ["Ashoka", "Chandragupta Maurya", "Bindusara", "Harsha"],
+            answer: 1,
+            explanation: "Chandragupta Maurya founded the Maurya Empire in 322 BCE after defeating Dhana Nanda of the Nanda dynasty, with the assistance and guidance of Chanakya (Kautilya)."
+          },
+          {
+            id: "q2",
+            text: "The first battle of Panipat was fought in the year 1526 between Babur and whom?",
+            options: ["Sher Shah Suri", "Ibrahim Lodi", "Hem Chandra Vikramaditya", "Rana Sanga"],
+            answer: 1,
+            explanation: "The First Battle of Panipat was fought on 21 April 1526 between Babur (invader) and Ibrahim Lodi (Sultan of Delhi). Babur won, establishing the Mughal Empire in India."
+          },
+          {
+            id: "q3",
+            text: "Which Governor-General of India abolished the practice of Sati in 1829?",
+            options: ["Lord Dalhousie", "Lord William Bentinck", "Lord Canning", "Lord Warren Hastings"],
+            answer: 1,
+            explanation: "Lord William Bentinck, with the tireless support of social reformer Raja Ram Mohan Roy, passed the Sati Regulation Act in December 1829, making Sati illegal and punishable."
+          },
+          {
+            id: "q4",
+            text: "The famous Indus Valley Civilization site 'Mohan-jo-daro' is situated on the banks of which river?",
+            options: ["Ravi", "Indus", "Sutlej", "Ghaggar"],
+            answer: 1,
+            explanation: "Mohan-jo-daro is located in Sindh, Pakistan on the right bank of the Indus River. (Harappa is situated on the bank of the Ravi river)."
+          },
+          {
+            id: "q5",
+            text: "Who was the founder of the Indian National Congress (INC) in 1885?",
+            options: ["Allan Octavian Hume", "Dadabhai Naoroji", "Womesh Chandra Bonnerjee", "Dinshaw Wacha"],
+            answer: 0,
+            explanation: "Allan Octavian Hume (A.O. Hume), a retired British civil servant, was the primary founder and organizer of the Indian National Congress in December 1885. W.C. Bonnerjee was its first president."
+          }
+        ]
+      },
+      {
+        id: "general-science",
+        title: "General Science (Biology)",
+        concept: "Biology is a high-yielding General Awareness topic. It covers cell structure, human anatomy, diseases & pathogens, plant kingdoms, genetics, and vitamins.",
+        tricks: [
+          "**Vitamin Deficiency Diseases:**\n- Vitamin A: Night Blindness\n- Vitamin B1: Beriberi\n- Vitamin C: Scurvy\n- Vitamin D: Rickets\n- Vitamin K: Non-clotting of blood",
+          "**Mitochondria** is known as the 'Powerhouse of the Cell', and **Lysosomes** are known as the 'Suicidal bags of the cell'."
+        ],
+        questions: [
+          {
+            id: "q1",
+            text: "Which organelle is commonly referred to as the 'Powerhouse of the Cell'?",
+            options: ["Golgi Apparatus", "Lysosome", "Mitochondrion", "Ribosome"],
+            answer: 2,
+            explanation: "Mitochondria are known as the 'powerhouse of the cell' because they generate most of the cell's supply of adenosine triphosphate (ATP), used as a source of chemical energy."
+          },
+          {
+            id: "q2",
+            text: "Scurvy is caused due to the deficiency of which vitamin?",
+            options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+            answer: 2,
+            explanation: "Scurvy is a disease resulting from a lack of Vitamin C (ascorbic acid). Symptoms include bleeding gums, weakness, and skin spots."
+          },
+          {
+            id: "q3",
+            text: "Which blood group is known as the 'Universal Donor'?",
+            options: ["Group AB+", "Group O-", "Group A-", "Group B+"],
+            answer: 1,
+            explanation: "Blood group O Negative (O-) is considered the universal donor because its red blood cells do not have A, B, or Rh antigens on their surface, making it safe to transfuse to any recipient."
+          },
+          {
+            id: "q4",
+            text: "In the human body, where is bile juice produced and where is it stored?",
+            options: [
+              "Produced in Stomach, stored in Pancreas",
+              "Produced in Liver, stored in Gallbladder",
+              "Produced in Gallbladder, stored in Liver",
+              "Produced in Pancreas, stored in Stomach"
+            ],
+            answer: 1,
+            explanation: "Bile juice, which helps in the digestion of fats, is produced/secreted by the Liver and stored in the Gallbladder."
+          },
+          {
+            id: "q5",
+            text: "Which disease is caused by the bite of an infected female Anopheles mosquito?",
+            options: ["Dengue", "Malaria", "Chikungunya", "Yellow Fever"],
+            answer: 1,
+            explanation: "Malaria is caused by Plasmodium parasites, which are transmitted to humans through the bite of an infected female Anopheles mosquito. (Dengue is transmitted by female Aedes mosquitoes)."
           }
         ]
       }
